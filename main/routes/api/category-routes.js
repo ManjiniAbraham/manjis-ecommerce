@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
   try {
     // Create a new category
     const newCategory = await Category.create(req.body);
-    res.status(200).json(newCategory);
+    res.status(200).json({ message: 'Category added'});
   } catch (err) {
     res.status(400).json(err);
   }
@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    res.status(200).json(updatedCategory);
+    res.status(200).json({ message: 'Category updated'});
   } catch (err) {
     res.status(400).json(err);
   }
@@ -71,7 +71,7 @@ router.delete('/:id', async (req, res) => {
       return;
     }
 
-    res.status(200).json(deletedCategory);
+    res.status(200).json({ message: 'Category deleted'});
   } catch (err) {
     res.status(500).json(err);
   }

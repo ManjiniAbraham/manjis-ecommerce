@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const tag = await Tag.create(req.body);
-    res.status(201).json(tag);
+    res.status(201).json({ message: 'Tag created'});
   } catch (err) {
     res.status(400).json(err);
   }
@@ -59,7 +59,7 @@ router.put('/:id', async (req, res) => {
       return;
     }
 
-    res.status(200).json(tag);
+    res.status(200).json({ message: 'Tag updated' });
   } catch (err) {
     res.status(400).json(err);
   }

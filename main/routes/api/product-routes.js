@@ -71,7 +71,7 @@ router.post('/', async (req, res) => {
       await ProductTag.bulkCreate(productTagIdArr);
     }
 
-    res.status(200).json(product);
+    res.status(200).json({ message: 'Product added'});
   } catch (err) {
     res.status(400).json(err);
   }
